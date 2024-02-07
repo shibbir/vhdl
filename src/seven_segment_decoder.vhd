@@ -1,14 +1,14 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity SevenSegmentDecoder is
-port (
-    input  : in std_logic_vector(3 downto 0);
-    output : out std_logic_vector(0 to 6)
-);
-end SevenSegmentDecoder;
+entity seven_segment_decoder is
+    port (
+        input  : in std_logic_vector(3 downto 0);
+        output : out std_logic_vector(0 to 6)
+    );
+end seven_segment_decoder;
 
-architecture Behavior of SevenSegmentDecoder is
+architecture behavioral of seven_segment_decoder is
 begin
     output <= "1111110" when input = "0000" else
               "0110000" when input = "0001" else
@@ -27,7 +27,7 @@ begin
               "1001111" when input = "1110" else
               "1000111" when input = "1111" else
               "0000000";
-end Behavior;
+end behavioral;
 
 ---------------------------------------
 | Segment | a | b | c | d | e | f | g |

@@ -1,15 +1,15 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity RS_FlipFlop is
-port (
-    s : in std_logic;
-    r : in std_logic;
-    q : out std_logic
-);
-end RS_FlipFlop;
+entity rs_flipflop is
+    port (
+        s : in std_logic;
+        r : in std_logic;
+        q : out std_logic
+    );
+end rs_flipflop;
 
-architecture Behavior of RS_FlipFlop is
+architecture behavioral of rs_flipflop is
     signal qt : std_logic;
 begin
     process (s, r)
@@ -22,25 +22,25 @@ begin
     end process;
 
     q <= qt;
-end Behavior;
+end behavioral;
 
-architecture Structure of RS_FlipFlop is
-    component NOR_Gate is
-    port (
-        input1 : in std_logic;
-        input2 : in std_logic;
-        output : out std_logic
-    );
+architecture structural of rs_flipflop is
+    component nor_gate is
+        port (
+            input1 : in std_logic;
+            input2 : in std_logic;
+            output : out std_logic
+        );
     end component;
 
     signal temp1 : std_logic;
     signal temp2 : std_logic;
 begin
-    NOR_1: NOR_Gate port map (s, temp2, temp1);
-    NOR_2: NOR_Gate port map (temp1, r, temp2);
+    NOR_1: nor_gate port map (s, temp2, temp1);
+    NOR_2: nor_gate port map (temp1, r, temp2);
 
     q <= temp2;
-end Structure;
+end structural;
 
 -- The structural description had worked fine in Post-Route simulation, but had issues with the Behavioral simulation, which
 -- is basically in a perfect world without any timing delay which led to zero delay oscillation

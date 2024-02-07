@@ -1,23 +1,23 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity ShiftRegister is
-port (
-    clock            : in std_logic;
-    reset            : in std_logic;
-    shift_enabled    : in std_logic;
-    parallel_enabled : in std_logic;
+entity shift_register is
+    port (
+        clock            : in std_logic;
+        reset            : in std_logic;
+        shift_enabled    : in std_logic;
+        parallel_enabled : in std_logic;
 
-    parallel_in      : in std_logic_vector(7 downto 0);
-    parallel_out     : out std_logic_vector(7 downto 0);
+        parallel_in      : in std_logic_vector(7 downto 0);
+        parallel_out     : out std_logic_vector(7 downto 0);
 
-    serial_in        : in std_logic;
-    serial_out       : out std_logic
-);
-end ShiftRegister;
+        serial_in        : in std_logic;
+        serial_out       : out std_logic
+    );
+end shift_register;
 
-architecture Behavior of ShiftRegister is
-    signal reg : out std_logic_vector(7 downto 0);
+architecture behavioral of shift_register is
+    signal reg : std_logic_vector(7 downto 0);
 begin
     process (clock, reset, parallel_enabled, shift_enabled)
     begin
@@ -38,4 +38,4 @@ begin
 
     parallel_out <= reg;
     serial_out <= reg(0);
-end Behavior;
+end behavioral;
