@@ -2,14 +2,21 @@
 > This repository contains some basic examples of components with VHSIC Hardware Description Language.
 
 ## Example components
-- NAND Gate
-- NOR Gate
-- XOR Gate
-- RS Flip-flop
+- Logic Gates
+    - NAND Gate
+    - NOR Gate
+    - XOR Gate
+    - XNOR Gate
+- Adders
+    - Full Adder
+    - Four bit Half Adder
+    - Generic Half Adder
+    - Sequential Adder
+- Flip-flops
+    - D Flip-flop
+    - RS Flip-flop
 - Shift Register
 - Elevator FSM
-- Full Adder
-- Generic Half Adder
 - Seven Segment Decoder
 
 ## License
