@@ -19,7 +19,7 @@ entity elevator is
         led_f3  : out std_logic;
 
         dr_up   : out std_logic;
-        dr_down : out std_logic;
+        dr_down : out std_logic
     );
 end elevator;
 

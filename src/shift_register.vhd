@@ -21,7 +21,7 @@ architecture behavioral of shift_register is
 begin
     process (clock, reset, parallel_enabled, shift_enabled)
     begin
-        if reset = '1' then
+        if reset = '1' then -- Async reset, because the reset does not check whether we have the rising edge
             reg <= (others => '0');
         else
             if rising_edge(clock) then

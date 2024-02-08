@@ -36,8 +36,8 @@ architecture structural of rs_flipflop is
     signal temp1 : std_logic;
     signal temp2 : std_logic;
 begin
-    NOR_1: nor_gate port map (s, temp2, temp1);
-    NOR_2: nor_gate port map (temp1, r, temp2);
+    nor_1: nor_gate port map (s, temp2, temp1);
+    nor_2: nor_gate port map (temp1, r, temp2);
 
     q <= temp2;
 end structural;

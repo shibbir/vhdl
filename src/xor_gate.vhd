@@ -12,6 +12,7 @@ end xor_gate;
 architecture dataflow of xor_gate is
 begin
     y <= a xor b;
+    -- y <= (a and not(b)) or (not(a) and b);
 end dataflow;
 
 architecture behavioral of xor_gate is
