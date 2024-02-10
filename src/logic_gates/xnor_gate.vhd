@@ -7,9 +7,9 @@ entity xnor_gate is
         b : in std_logic;
         y : out std_logic
     );
-end xor_gate;
+end xnor_gate;
 
-architecture dataflow of xor_gate is
+architecture dataflow of xnor_gate is
 begin
     y <= a xnor b;
     -- y <= not(a xor b);

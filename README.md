@@ -9,7 +9,7 @@
     - XNOR Gate
 - Adders
     - Full Adder
-    - Four bit Half Adder
+    - 4-bit Half Adder
     - Generic Half Adder
     - Sequential Adder
 - Flip-flops
